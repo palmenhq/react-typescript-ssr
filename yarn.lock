@@ -3463,6 +3463,10 @@ nanomatch@^1.2.5:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+nebula-css@^2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.7.1.tgz#4346d51e7df74e709a958521d773ecb23f61bb1c"
+
 negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"

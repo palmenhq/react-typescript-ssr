@@ -3,7 +3,7 @@ const path = require('path')
 const config = require('./webpack.config.base')
 
 config.devServer = {
-  contentBase: path.resolve(path.join(__dirname, '..', 'dev-server-content-base')),
+  contentBase: path.resolve(__dirname, '..', 'dev-server-content-base'),
   historyApiFallback: true,
   compress: true,
   hot: true,

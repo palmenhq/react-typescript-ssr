@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const sourcePath = path.resolve(path.join(__dirname, '..', 'src'))
+const sourcePath = path.resolve(__dirname, '..', 'src')
 
 module.exports = {
   entry: {
@@ -9,18 +9,18 @@ module.exports = {
       'react-hot-loader/patch',
       'babel-polyfill',
       'es6-promise',
-      path.resolve(path.join(sourcePath, 'index.tsx')),
+      path.resolve(sourcePath, 'index.tsx'),
     ],
   },
   output: {
-    path: path.resolve(path.join(__dirname, '..', 'build')),
+    path: path.resolve(__dirname, '..', 'build'),
     publicPath: '/',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
     modules: [
-      path.resolve(path.join(__dirname, '..', 'src')),
-      path.resolve(path.join(__dirname, '..', 'node_modules')),
+      sourcePath,
+      path.resolve(__dirname, '..', 'node_modules'),
     ],
   },
   devtool: 'source-map',
@@ -35,8 +35,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: ['react-hot-loader/webpack', 'babel-loader', 'awesome-typescript-loader'],
-        exclude: path.resolve(__dirname, '..', 'node_modules'),
-        include: path.resolve(__dirname, '..', 'src'),
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       { test: /\.svg$/, use: 'svg-inline-loader' },

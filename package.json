@@ -5,7 +5,8 @@
   "private": false,
   "scripts": {
     "webpack:dev-server": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config.development.js",
-    "webpack:build": "rm -rf build && NODE_ENV=production webpack -p --progress --config webpack/webpack.config.production.js"
+    "webpack:build": "rm -rf build && NODE_ENV=production webpack -p --progress --config webpack/webpack.config.production.js",
+    "test": "NODE_ENV=test jest"
   },
   "dependencies": {
     "@types/node": "^8.5.7",
@@ -41,10 +42,33 @@
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.19.1",
     "svg-inline-loader": "^0.8.0",
+    "ts-jest": "^22.0.2",
     "typescript": "^2.6.2",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.10.0",
     "webpack-stats-plugin": "^0.1.5"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.1.8",
+    "@types/jest": "^22.1.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest": "^22.1.4",
+    "react-test-renderer": "^16.2.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "test\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "setupFiles": [
+      "<rootDir>/src/test-setup-enzyme.js"
+    ]
   }
 }

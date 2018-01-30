@@ -5,7 +5,7 @@ import css from './style.scss'
 import { store } from '../state/store'
 import { AwesomeComponent } from '../components/AwesomeComponent/index'
 
-export const App = (
+export const App = () => (
   <Provider store={store}>
     <div className={css.text}>
       <AwesomeComponent />

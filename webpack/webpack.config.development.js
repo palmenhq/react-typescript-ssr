@@ -3,18 +3,11 @@ const path = require('path')
 const config = require('./webpack.config.base')
 
 config.devServer = {
-  contentBase: path.resolve(__dirname, '..', 'dev-server-content-base'),
-  historyApiFallback: true,
   compress: true,
   hot: true,
   host: '0.0.0.0',
   disableHostCheck: true,
-  port: process.env.PORT,
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE',
-    'Access-Control-Allow-Headers': 'Content-Type',
-  },
+  port: process.env.CLIENT_DEV_PORT || 8081,
   stats: config.stats,
 }
 

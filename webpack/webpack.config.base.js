@@ -1,7 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const sourcePath = path.resolve(__dirname, '..', 'src')
+const sourcePath = path.resolve(__dirname, '..', 'client')
+
+console.log(sourcePath)
 
 module.exports = {
   entry: {
@@ -34,7 +36,20 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader', 'awesome-typescript-loader'],
+        loaders: [
+          {
+            loader: 'react-hot-loader/webpack'
+          },
+          {
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              configFileName: path.resolve(sourcePath, 'tsconfig.json'),
+            }
+          }
+        ],
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
       { test: /\.svg$/, use: 'svg-inline-loader' },

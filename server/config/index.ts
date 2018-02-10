@@ -5,12 +5,12 @@ import test from './test'
 
 export interface Config {
   nodeEnv: string,
-  appEnv: string,
+  appEnv: 'development' | 'production' | 'test',
   port: number,
   webpackHost?: string,
 }
 
-export const configEnvironment = process.env.CONFIG_ENV || 'development'
+export const configEnvironment = base.appEnv
 
 let config: {}
 switch (configEnvironment) {

@@ -7,12 +7,13 @@
     "start": "NODE_ENV=production node build/index.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"npm run server:dev-server\" \"npm run client:dev-server\"",
     "build": "rimraf build/* && concurrently -p \"[{name}]\" -n \"TypeScript,Webpack\" -c \"cyan.bold,magenta.bold\" \"npm run server:build\" \"npm run client:build\"",
+    "test": "concurrently -k -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"npm run server:test\" \"npm run client:test\"",
     "client:dev-server": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config.development.js",
     "client:build": "NODE_ENV=production webpack -p --progress --config webpack/webpack.config.production.js",
-    "client:test": "NODE_ENV=test jest client",
+    "client:test": "TEST_ENV=client NODE_ENV=test jest --config client/jest.config.json client",
     "server:build": "npm run server:copy-resources & tsc -p server",
     "server:dev-server": "NODE_ENV=development nodemon -x \"ts-node --project server\" -w server server/index.ts",
-    "server:test": "NODE_ENV=test jest server",
+    "server:test": "NODE_ENV=test jest --config server/jest.config.json server",
     "server:copy-resources": "cp -r server/resources build/resources"
   },
   "dependencies": {
@@ -78,25 +79,13 @@
   "devDependencies": {
     "@types/enzyme": "^3.1.8",
     "@types/jest": "^22.1.1",
+    "babel-jest": "^22.2.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.1.4",
     "react-test-renderer": "^16.2.0",
-    "ts-jest": "^22.0.2",
+    "ts-jest": "^22.0.3",
     "ts-node": "^4.1.0"
-  },
-  "jest": {
-    "transform": {
-      ".(ts|tsx)": "ts-jest"
-    },
-    "testRegex": "test\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
-    "setupFiles": [
-      "<rootDir>/client/test-setup-enzyme.js"
-    ]
   }
 }

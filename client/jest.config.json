@@ -1,0 +1,19 @@
+{
+  "transform": {
+    "\\.tsx?$": "<rootDir>/test-preprocessor.js"
+  },
+  "testRegex": "\\.test\\.(ts|tsx|js)$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "setupFiles": [
+    "<rootDir>/test-setup-enzyme.js"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsConfigFile": "client/tsconfig.json"
+    }
+  }
+}

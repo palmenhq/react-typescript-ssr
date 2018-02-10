@@ -6,7 +6,7 @@ import { createApp } from './app'
 
 const log = getLogger()
 
-console.log(`Booting server 👢 (PORT ${config.port})
+log(`Booting server 👢 (PORT ${config.port})
   - Config environment: "${configEnvironment}"
   - App environment: "${config.nodeEnv}"
   - Node environment: "${config.nodeEnv}"`)

@@ -5,7 +5,7 @@ import { getLogger } from './logging';
 
 const log = getLogger()
 
-export const compileTemplate = <T>(template: string): HandlebarsTemplateDelegate => {
+export const compileTemplate = (template: string): HandlebarsTemplateDelegate => {
   const location = resolve(__dirname, '..', 'resources', 'views', `${template}.hbs`)
   log(`Looking for template "${template}" in "${location}"`)
   const file = readFileSync(location)

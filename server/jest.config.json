@@ -1,11 +1,10 @@
 {
   "transform": {
-    ".(ts|tsx)": "ts-jest"
+    "\\.ts$": "ts-jest"
   },
-  "testRegex": "\\.test\\.(ts|tsx|js)$",
+  "testRegex": "\\.test\\.(ts|js)$",
   "moduleFileExtensions": [
     "ts",
-    "tsx",
     "js"
   ],
   "globals": {

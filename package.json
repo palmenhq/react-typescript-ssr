@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node build/index.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"npm run server:dev-server\" \"npm run client:dev-server\"",
     "build": "rimraf build/* && concurrently -p \"[{name}]\" -n \"TypeScript,Webpack\" -c \"cyan.bold,magenta.bold\" \"npm run server:build\" \"npm run client:build\"",
-    "test": "concurrently -k -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"npm run server:test\" \"npm run client:test\"",
+    "test": "concurrently -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"npm run server:test\" \"npm run client:test\"",
     "client:dev-server": "NODE_ENV=development webpack-dev-server --config webpack/webpack.config.development.js",
     "client:build": "NODE_ENV=production webpack -p --progress --config webpack/webpack.config.production.js",
     "client:test": "TEST_ENV=client NODE_ENV=test jest --config client/jest.config.json client",

@@ -13,7 +13,7 @@
   ],
   "globals": {
     "ts-jest": {
-      "tsConfigFile": "client/tsconfig.json"
+      "tsConfigFile": "./tsconfig.json"
     }
   }
 }

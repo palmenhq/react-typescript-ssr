@@ -7,9 +7,13 @@ const port = process.env.CLIENT_DEV_PORT || 8081;
 config.devServer = {
   compress: true,
   hot: true,
+  inline: true,
   host: '0.0.0.0',
   disableHostCheck: true,
   port,
+  headers: {
+    'Access-Control-Allow-Origin': '*',
+  },
   stats: config.stats,
 }
 

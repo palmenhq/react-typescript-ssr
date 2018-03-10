@@ -3,8 +3,6 @@ const path = require('path')
 
 const sourcePath = path.resolve(__dirname, '..', 'client')
 
-console.log(sourcePath)
-
 module.exports = {
   entry: {
     app: [
@@ -16,7 +14,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '..', 'build', 'public'),
-    publicPath: '/',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],

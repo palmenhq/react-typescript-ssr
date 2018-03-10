@@ -6,6 +6,7 @@ const { StatsWriterPlugin } = require('webpack-stats-plugin')
 const config = require('./webpack.config.base')
 
 config.output.filename = '[name]-[hash].js'
+config.output.publicPath = `/`,
 
 config.plugins.push(
   new webpack.LoaderOptionsPlugin({

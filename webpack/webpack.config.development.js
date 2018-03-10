@@ -2,16 +2,19 @@ const webpack = require('webpack')
 const path = require('path')
 const config = require('./webpack.config.base')
 
+const port = process.env.CLIENT_DEV_PORT || 8081;
+
 config.devServer = {
   compress: true,
   hot: true,
   host: '0.0.0.0',
   disableHostCheck: true,
-  port: process.env.CLIENT_DEV_PORT || 8081,
+  port,
   stats: config.stats,
 }
 
 config.output.filename = '[name].js'
+config.output.publicPath = `http://localhost:${port}/`,
 config.plugins.push(
   new webpack.HotModuleReplacementPlugin()
 )

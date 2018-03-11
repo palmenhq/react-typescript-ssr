@@ -49,7 +49,7 @@ module.exports = {
         ],
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-      { test: /\.svg$/, use: 'svg-inline-loader' },
+      { test: /\.svg$/, loader: 'svg-inline-loader' },
       {
         test: /\.(png|gif|jpg)$/,
         include: sourcePath,

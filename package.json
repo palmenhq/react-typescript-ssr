@@ -14,7 +14,7 @@
     "server:build": "npm run server:copy-resources & tsc -p server",
     "server:dev-server": "NODE_ENV=development nodemon -x \"ts-node --project server\" -w server server/index.ts",
     "server:test": "NODE_ENV=test jest --config server/jest.config.json server",
-    "server:copy-resources": "cp -r server/resources build/resources"
+    "server:copy-resources": "mkdir -p build/resources && cp -r server/resources/* build/resources"
   },
   "dependencies": {
     "@types/debug": "^0.0.30",
@@ -45,6 +45,7 @@
     "debug": "^3.1.0",
     "es6-promise": "^4.2.2",
     "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
     "koa": "^2.4.1",
     "koa-mount": "^3.0.0",

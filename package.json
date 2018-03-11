@@ -84,6 +84,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.1.4",
     "react-test-renderer": "^16.2.0",
     "ts-jest": "^22.0.3",

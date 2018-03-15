@@ -6,7 +6,6 @@ const sourcePath = path.resolve(__dirname, '..', 'client')
 module.exports = {
   entry: {
     app: [
-      'react-hot-loader/patch',
       'babel-polyfill',
       'es6-promise',
       path.resolve(sourcePath, 'index.tsx'),
@@ -34,9 +33,6 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: [
-          {
-            loader: 'react-hot-loader/webpack'
-          },
           {
             loader: 'babel-loader'
           },

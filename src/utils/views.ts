@@ -1,7 +1,7 @@
 import { compile } from 'handlebars'
-import { resolve } from 'path';
-import { readFileSync } from 'fs';
-import { getLogger } from './logging';
+import { resolve } from 'path'
+import { readFileSync } from 'fs'
+import { getLogger } from './logging'
 
 const log = getLogger()
 

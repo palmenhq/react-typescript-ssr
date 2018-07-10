@@ -1,19 +1,9 @@
 const webpack = require('webpack')
 const path = require('path')
 
-const sourcePath = path.resolve(__dirname, '..', 'client')
+const sourcePath = path.resolve(__dirname, '../src')
 
 module.exports = {
-  entry: {
-    app: [
-      'babel-polyfill',
-      'es6-promise',
-      path.resolve(sourcePath, 'index.tsx'),
-    ],
-  },
-  output: {
-    path: path.resolve(__dirname, '..', 'build', 'public'),
-  },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
     modules: [
@@ -38,27 +28,10 @@ module.exports = {
           },
           {
             loader: 'awesome-typescript-loader',
-            options: {
-              configFileName: path.resolve(sourcePath, 'tsconfig.json'),
-            }
           }
         ],
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-      { test: /\.svg$/, loader: 'svg-inline-loader' },
-      {
-        test: /\.(png|gif|jpg)$/,
-        include: sourcePath,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 20480,
-              name: 'assets/[name]-[hash].[ext]',
-            },
-          },
-        ],
-      },
     ],
   },
   plugins: [

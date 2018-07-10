@@ -7,7 +7,6 @@ export interface Config {
   nodeEnv: string,
   appEnv: 'development' | 'production' | 'test',
   port: number,
-  webpackHost?: string,
 }
 
 export const configEnvironment = base.appEnv

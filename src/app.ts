@@ -10,7 +10,7 @@ export const createApp = () => {
   const app = new Koa()
   const router = new Router()
 
-  app.use(mount('/static', serve(resolve(__dirname, 'public'))))
+  app.use(mount('/static', serve(resolve(process.cwd(), 'build/static'))))
   router.get('/*', getPage)
   app.use(router.middleware())
 

@@ -1,5 +1,6 @@
 import { readFile } from 'fs'
 import * as path from 'path'
+import { config } from '../../config'
 
 export interface Assets {
   scriptLocation: string,
@@ -7,7 +8,7 @@ export interface Assets {
 
 export const getPublicAssetsPath = () => new Promise<Assets>((resolve, reject) => {
   if (process.env.NODE_ENV !== 'production') {
-    resolve({ scriptLocation: 'http://localhost:8081/app.js' })
+    resolve({ scriptLocation: `${config.webpackHost}app.js` })
     return
   }
   readFile(path.resolve(process.cwd(), 'build/static/stats.json'), (err, data) => {

@@ -8,7 +8,7 @@ module.exports = {
   process: (src, path, config) => {
     const isTypeScript = path.endsWith('.ts') || path.endsWith('.tsx')
     const es6 = isTypeScript ? tsJest.process(src, path, config) : src
-    es5 = babelJest.process(
+    const es5 = babelJest.process(
       es6,
       isTypeScript ? path.replace(/tsx?$/, 'js') : path,
       config

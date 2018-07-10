@@ -10,14 +10,5 @@
   ],
   "setupFiles": [
     "<rootDir>/test-setup-enzyme.js"
-  ],
-  "moduleNameMapper": {
-    "\\.(svg|png|gif|jpeg)$": "<rootDir>/test-file-mock.js",
-    "\\.(css|scss)$": "identity-obj-proxy"
-  },
-  "globals": {
-    "ts-jest": {
-      "tsConfigFile": "./tsconfig.json"
-    }
-  }
+  ]
 }

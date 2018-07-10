@@ -4,29 +4,30 @@ import prod from './prod'
 import test from './test'
 
 export interface Config {
-  nodeEnv: string,
-  appEnv: 'development' | 'production' | 'test',
-  port: number,
+  nodeEnv: string
+  appEnv: 'development' | 'production' | 'test'
+  webpackHost?: string
+  port: number
 }
 
 export const configEnvironment = base.appEnv
 
-let config: {}
+let baseConfig: {}
 switch (configEnvironment) {
   case 'development':
-    config = dev
+    baseConfig = dev
 
   case 'production':
-    config = prod
+    baseConfig = prod
 
   case 'test':
-    config = test
+    baseConfig = test
 
   default:
-    config = dev
+    baseConfig = dev
 }
 
-export default {
+export const config = {
   ...base,
-  ...config,
+  ...baseConfig,
 } as Config

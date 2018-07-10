@@ -2,7 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const config = require('./webpack.config.base')
 
-const port = process.env.CLIENT_DEV_PORT || 8081;
+const port = process.env.WEBPACK_PORT || 8081;
 const sourcePath = path.resolve(__dirname, '../src')
 
 
@@ -29,7 +29,7 @@ config.devServer = {
 
 config.output = {
   filename: '[name].js',
-  publicPath: `http://localhost:${port}/`,
+  publicPath: process.env.WEBPACK_HOST || `http://localhost:${port}/`,
 }
 
 config.plugins.push(

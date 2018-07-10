@@ -1,6 +1,6 @@
 import 'source-map-support/register'
 
-import config, { configEnvironment } from './config'
+import { config, configEnvironment } from './config'
 import { getLogger } from './utils/logging'
 import { createApp } from './app'
 
@@ -8,7 +8,7 @@ const log = getLogger()
 
 log(`Booting server 👢 (PORT ${config.port})
   - Config environment: "${configEnvironment}"
-  - App environment: "${config.nodeEnv}"
+  - App environment: "${config.appEnv}"
   - Node environment: "${config.nodeEnv}"`)
 
 const app = createApp()

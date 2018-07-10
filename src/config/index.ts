@@ -8,6 +8,7 @@ export interface Config {
   appEnv: 'development' | 'production' | 'test'
   webpackHost?: string
   port: number
+  logLevel: string
 }
 
 export const configEnvironment = base.appEnv

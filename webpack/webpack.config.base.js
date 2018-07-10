@@ -38,6 +38,9 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        WEBPACK_HOST: "process.env.WEBPACK_HOST",
+        PORT: "process.env.PORT",
+        WEBPACK_PORT: "process.env.WEBPACK_PORT",
       },
     }),
     new webpack.NamedModulesPlugin()

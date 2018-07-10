@@ -15,7 +15,7 @@ export const getPage: Middleware = async ctx => {
 <html>
 <head>
 <title>Hello</title>
-<link href="https://fonts.googleapis.com/css?family=Rozha+One" rel="stylesheet">
+<link href="/static/normalize.min.css" rel="stylesheet">
 ${stylesheet.getStyleTags()}
 </head>
 <body>

@@ -5,13 +5,14 @@
   "private": false,
   "scripts": {
     "start": "node build/index.js",
-    "build": "NODE_ENV=production concurrently -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"yarn build:server\" \"yarn build:client\"",
-    "watch": "concurrently -p \"[{name}]\" -n \"Server,Client,App\" -c \"blue.bold,cyan.bold,magenta.bold\" \"yarn webpack:server\" \"yarn watch:client\" \"nodemon build/index.js\"",
+    "build": "yarn copy-static && NODE_ENV=production concurrently -p \"[{name}]\" -n \"Server,Client\" -c \"cyan.bold,magenta.bold\" \"yarn build:server\" \"yarn build:client\"",
+    "watch": "yarn copy-static && concurrently -p \"[{name}]\" -n \"Server,Client,App\" -c \"blue.bold,cyan.bold,magenta.bold\" \"yarn webpack:server\" \"yarn watch:client\" \"nodemon build/index.js\"",
     "webpack:server": "webpack -w --config ./webpack/webpack.config.server.development",
     "build:server": "webpack -p --config ./webpack/webpack.config.server.production",
     "watch:client": "webpack-dev-server --config ./webpack/webpack.config.client.development",
     "build:client": "webpack -p --config ./webpack/webpack.config.client.production",
-    "test": "jest --config jest.config.json"
+    "test": "jest --config jest.config.json",
+    "copy-static": "mkdir -p ./build/static && cp -r ./src/static/* ./build/static"
   },
   "dependencies": {
     "@types/debug": "^0.0.30",

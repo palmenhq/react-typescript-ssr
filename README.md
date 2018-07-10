@@ -19,6 +19,7 @@ the built client on port `8080` (or whatever you set the env var `PORT` to).
   - `PORT` - which port to run the node server on. Default `8080`.
   - `WEBPACK_PORT` - (dev only) What port to run webpack-dev-server-on. Default `8081`
   - `WEBPACK_HOST` - (dev only) Where webpack-dev-server is serving WITH trailing slash (so node server knows where to look). Default `http://localhost:8081/`.
+  - `LOG_LEVEL` - The log level, defaults to `info`
   - Good ol' fashioned `NODE_ENV` ofc
 
 ## Testing

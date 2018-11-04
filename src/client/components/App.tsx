@@ -3,10 +3,12 @@ import { Provider } from 'react-redux'
 import { hot } from 'react-hot-loader'
 
 import { store } from '../state/store'
-import { AwesomeComponent } from '../components/AwesomeComponent'
+import { AwesomeComponent } from './AwesomeComponent'
+import { GlobalStyles } from '../utils/GlobalStyles'
 
 export const App = () => (
   <Provider store={store}>
+    <GlobalStyles />
     <div>
       <AwesomeComponent />
     </div>

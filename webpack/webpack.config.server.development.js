@@ -4,6 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 const config = require('./webpack.config.base')
 const sourcePath = path.resolve(__dirname, '../src')
 
+config.mode = 'development'
 config.entry = {
   server: [
     'babel-polyfill',

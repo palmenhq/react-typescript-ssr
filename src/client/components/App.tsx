@@ -3,15 +3,25 @@ import { Provider } from 'react-redux'
 import { hot } from 'react-hot-loader'
 
 import { store } from '../state/store'
-import { AwesomeComponent } from './AwesomeComponent'
 import { GlobalStyles } from '../utils/GlobalStyles'
+import { Route, Switch } from 'react-router-dom'
+import { routes } from '../../routes'
 
 export const App = () => (
   <Provider store={store}>
-    <GlobalStyles />
-    <div>
-      <AwesomeComponent />
-    </div>
+    <>
+      <GlobalStyles />
+      <Switch>
+        {routes.map((route) => (
+          <Route
+            key={route.path}
+            path={route.path}
+            exact={route.exact}
+            component={route.component}
+          />
+        ))}
+      </Switch>
+    </>
   </Provider>
 )
 

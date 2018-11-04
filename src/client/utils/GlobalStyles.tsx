@@ -4,7 +4,9 @@ import { injectGlobal } from 'emotion'
 export const GlobalStyles: React.SFC = ({ children }) => {
   injectGlobal`
 body {
-  color: pink;
+font-family: sans-serif;
+padding: 0;
+margin: 0;
 }
   `
 

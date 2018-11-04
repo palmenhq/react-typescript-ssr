@@ -5,11 +5,10 @@ const config = require('./webpack.config.base')
 const port = process.env.WEBPACK_PORT || 8081;
 const sourcePath = path.resolve(__dirname, '../src')
 
-
+config.mode = 'development'
 config.entry = {
   app: [
-    'babel-polyfill',
-    'es6-promise',
+    '@babel/polyfill',
     path.resolve(sourcePath, 'client/entry.tsx'),
   ],
 }

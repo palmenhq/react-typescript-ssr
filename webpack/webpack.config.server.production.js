@@ -6,6 +6,7 @@ const { StatsWriterPlugin } = require('webpack-stats-plugin')
 const config = require('./webpack.config.base')
 const sourcePath = path.resolve(__dirname, '../src')
 
+config.mode = 'production'
 config.entry = {
   server: [
     'babel-polyfill',
